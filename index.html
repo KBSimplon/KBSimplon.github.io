@@ -1,29 +1,92 @@
+<!-- 
+(⌐■_■)
+⎝◕.◕⎠
+☞ º ᗜ º ☞
+乁(■.■)ㄏ
+(づ｡◕‿‿◕｡)づ
+(☞ﾟヮﾟ)☞ ☜(ﾟヮﾟ☜)
+-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Welcome</title>
+	<meta charset="utf-8">
 	<style>
-		
-		* {
-			margin: 0;
-			padding: 0;
-		}
 
 		body {
 			background: url("https://wallpaperscraft.com/image/planet_lights_shadow_space_light_10737_1680x1050.jpg") no-repeat top center fixed; 
 			-webkit-background-size: cover; /* pour anciens Chrome et Safari */
   			background-size: cover; /* version standardisée */
+  			cursor: crosshair; /* La propriété cursor définit la forme du curseur lorsque le pointeur est au-dessus de l'élément. */
 		}
 
 		h1 {
-			color: DarkMagenta;
+			color: white; /* FONCTIONNE EN DEHORS LA DIV */
+			opacity: 0.5;
 		}
 
 		#conteneur {
-			min-height: 190vh;
+			min-height: 175vh;
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+		}
+
+		/* CHANGE LA COULEUR DES ELEMENTS LORSQUE ON EST DANS DE LA DIV (QUI PREND 100% DU BODY) */
+
+		div:hover h1 {
+			opacity: 1;
+		}
+
+		div:hover button {
+			color: white;
+		}
+
+		button {
+		    background-color: #555555;
+		    color: #555555;
+		    border: 2px solid #555555;
+		    border-radius: 15px;
+		    margin: 4px 0;
+		    padding: 7.5px 12.5px; 
+		    font-size: 16px;
+		    -webkit-transition-duration: 0.4s; /* Safari */
+		    transition-duration: 0.4s;
+		    cursor: crosshair; /* La propriété cursor définit la forme du curseur lorsque le pointeur est au-dessus de l'élément. */
+		}
+
+		button:active {
+			  opacity: 0.5;
+			  transform: translateY(4px); /* DEFINIT LE DEPLACEMENT VERTICAL/BAS DU BOUTON LORS DU CLIC */
+		}
+
+		button span {
+			  position: relative;
+			  transition: 0.5s;
+		}
+
+		button span:after {
+			  content: 'And Enjoy ⎝◕.◕⎠'; /* CHANGE LE CARACTERE AFFICHER (FLECHES) */
+			  /*content:  '\0020';*/ /*SPACE/*
+			  /*content: '\2714';*/ /*	HEAVY CHECK MARK*/
+			  /*content: '\2622';*/	/*RADIOACTIVE SIGN*/
+			  /*content:  '\2623';*/ /*BIOHAZARD SIGN;*/
+			  position: absolute;
+			  opacity: 0;
+			  top: 0;
+			  right: -20px;
+			  transition: 0.5s;
+		}
+
+		button:hover span {
+		  		/*padding-right: 17.5px;*/
+		  		padding-right: 130px; /* PERMET DE DISPLAY LE "CONTENT" DU "BUTTON SPAN: AFTER {}" */
+		}
+
+		button:hover span:after {
+			  opacity: 1;
+			  right: 0;
 		}
 		
 	</style>
@@ -31,6 +94,7 @@
 <body>
 	<div id="conteneur">
 		<h1>Hell O World !</h1>
+		<button style="vertical-align:middle"><span>Get Started !</span></button>
 	</div>
 </body>
 </html>
